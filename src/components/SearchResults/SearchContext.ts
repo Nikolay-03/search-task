@@ -1,3 +1,19 @@
-import { createContext } from "react";
+import {createContext} from "react";
+import {IUser} from "../../types/User.ts";
 
-export const SearchContext = createContext({ users: [] });
+interface ISearchContext {
+    users: IUser[];
+    setUsers: (value: IUser[]) => void;
+    searchQuery: string;
+    setSearchQuery: (value: string) => void;
+}
+
+export const SearchContext = createContext<ISearchContext>({
+    users: [],
+    setUsers: () => {
+    },
+    searchQuery: '',
+    setSearchQuery: () => {
+    },
+});
+
